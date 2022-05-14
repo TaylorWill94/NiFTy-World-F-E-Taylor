@@ -11,7 +11,7 @@ export default function NFT() {
       .then((response) => {
         setContent(response.data)
       }).catch((error) => {
-        throw error
+        throw error 
       })
   }, [URL])
 
