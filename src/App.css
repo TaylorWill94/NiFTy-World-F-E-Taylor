@@ -33,6 +33,14 @@
 .nft-heading {
   background-color: yellow;
   padding: 50px;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.nft-info {
+  background-color: #d9d9d9;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .nft-learn-btn {

@@ -81,7 +81,11 @@ export default function NFT() {
       {show
         ? ""
         : content.map((c, index) => {
-            return <div key={index}>{c.reading_material}</div>;
+            return (
+              <div className="nft-info" key={index}>
+                {c.reading_material}
+              </div>
+            );
           })}
       <Videos />
       <button className="next-btn">Next</button>
