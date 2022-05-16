@@ -35,6 +35,11 @@
   padding: 50px;
 }
 
+.nft-learn-btn {
+  padding: 10px;
+  border-radius: 12px;
+}
+
 .next-btn {
   position: absolute;
   right: 50px;

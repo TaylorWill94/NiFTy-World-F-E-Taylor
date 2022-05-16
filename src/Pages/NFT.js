@@ -6,6 +6,7 @@ import axios from "axios";
 export default function NFT() {
   const [content, setContent] = useState([]);
   const [show, setShow] = useState(true);
+  const [changeText, setChangeText] = useState("Learn");
   const URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
@@ -27,6 +28,10 @@ export default function NFT() {
     setShow((text) => !text);
   };
 
+  const changeBtnText = () => {
+    setChangeText("Close");
+  };
+
   return (
     <div className="nft">
       <h1 className="app-heading">NiFTY World</h1>
@@ -38,7 +43,17 @@ export default function NFT() {
       <h1 className="nft-heading">What is an NFT?</h1>
       <br />
       <br />
-      {{ nft } ? <button onClick={showNft}>Learn</button> : null}
+      {{ nft } ? (
+        <button
+          className="nft-learn-btn"
+          onClick={() => {
+            showNft();
+            changeBtnText();
+          }}
+        >
+          {changeText}
+        </button>
+      ) : null}
       <br />
       <br />
       {show
