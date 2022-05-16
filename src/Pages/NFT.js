@@ -29,8 +29,20 @@ export default function NFT() {
   };
 
   const changeBtnText = () => {
-    setChangeText("Close");
+    setChangeText(":D");
   };
+
+  const closeBtn = () => {
+    setChangeText("Click");
+  };
+
+  // const changeBtn = (changeText) => {
+  //   if (setShow === "true") {
+  //     changeText("Close");
+  //   } else {
+  //     changeText("Learn");
+  //   }
+  // };
 
   return (
     <div className="nft">
@@ -53,7 +65,17 @@ export default function NFT() {
         >
           {changeText}
         </button>
-      ) : null}
+      ) : (
+        <button
+          className="nft-learn-btn"
+          onClick={() => {
+            showNft();
+            closeBtn();
+          }}
+        >
+          {changeText}
+        </button>
+      )}
       <br />
       <br />
       {show
