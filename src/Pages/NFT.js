@@ -17,6 +17,10 @@ export default function NFT() {
       });
   }, [URL]);
 
+  let nft = content.map((c, index) => (
+    <div key={index}>{c.reading_material}</div>
+  ));
+
   return (
     <div className="nft">
       <h1 className="app-heading">NiFTY World</h1>
@@ -25,9 +29,10 @@ export default function NFT() {
       <h1 className="nft-heading">What is an NFT?</h1>
       <br />
       <br />
-      {content.map((c, index) => {
+      {/* {content.map((c, index) => {
         return <div key={index}>{c.reading_material}</div>;
-      })}
+      })} */}
+      {nft}
       <Videos />
       <button className="next-btn">Next</button>
     </div>
