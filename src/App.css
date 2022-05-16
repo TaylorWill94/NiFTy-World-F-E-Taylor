@@ -41,6 +41,11 @@
   background-color: #d9d9d9;
   padding: 20px;
   border-radius: 12px;
+  transition-duration: 4s;
+}
+
+.nft-info:hover {
+  background-color: blue;
 }
 
 .nft-learn-btn {
