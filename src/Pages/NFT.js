@@ -38,9 +38,11 @@ export default function NFT() {
       <h1 className="nft-heading">What is an NFT?</h1>
       <br />
       <br />
-      {{ nft } ? <button onClick={showNft}>hide</button> : null}
+      {{ nft } ? <button onClick={showNft}>Learn</button> : null}
+      <br />
+      <br />
       {show
-        ? " Hi"
+        ? ""
         : content.map((c, index) => {
             return <div key={index}>{c.reading_material}</div>;
           })}
