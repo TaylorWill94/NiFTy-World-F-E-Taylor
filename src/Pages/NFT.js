@@ -29,6 +29,7 @@ export default function NFT() {
         return <div key={index}>{c.reading_material}</div>;
       })}
       <Videos />
+      <button className="next-btn">Next</button>
     </div>
   );
 }
