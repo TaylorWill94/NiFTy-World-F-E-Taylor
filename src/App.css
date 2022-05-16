@@ -6,13 +6,21 @@
 
 .App {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 }
 
 .nft {
   background-color: white;
   text-align: center;
+  grid-column: 2;
+}
+
+.app-heading {
+  color: #f5dc56;
+  padding-top: 20px;
+  position: absolute;
+  left: 50px;
 }
 
 .nft-heading {
