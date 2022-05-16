@@ -88,6 +88,7 @@ export default function NFT() {
             );
           })}
       <Videos />
+      <video className="little-lady" width="750" height="500" controls></video>
       <button className="next-btn">Next</button>
     </div>
   );

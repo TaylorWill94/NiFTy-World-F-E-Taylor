@@ -53,6 +53,10 @@
   border-radius: 12px;
 }
 
+.little-lady {
+  border: 1px solid blue;
+}
+
 .next-btn {
   position: absolute;
   right: 50px;
