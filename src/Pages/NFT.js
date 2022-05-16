@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function NFT() {
   const [content, setContent] = useState([]);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
@@ -38,15 +38,12 @@ export default function NFT() {
       <h1 className="nft-heading">What is an NFT?</h1>
       <br />
       <br />
-      {/* {content.map((c, index) => {
-        return <div key={index}>{c.reading_material}</div>;
-      })} */}
-      {nft} ?{" "}
-      <button onClick={showNft} type="button">
-        hide
-      </button>{" "}
-      : <button>show</button>
-      {show ? "Hi" : "Bye"}
+      {{ nft } ? <button onClick={showNft}>hide</button> : null}
+      {show
+        ? " Hi"
+        : content.map((c, index) => {
+            return <div key={index}>{c.reading_material}</div>;
+          })}
       <Videos />
       <button className="next-btn">Next</button>
     </div>
