@@ -11,6 +11,7 @@
 }
 
 .nft {
+  padding-top: 35px;
   background-color: white;
   text-align: center;
   grid-column: 2;
@@ -21,6 +22,12 @@
   padding-top: 20px;
   position: absolute;
   left: 50px;
+}
+
+.nft-home-btn {
+  padding-top: 20px;
+  position: absolute;
+  right: 50px;
 }
 
 .nft-heading {
