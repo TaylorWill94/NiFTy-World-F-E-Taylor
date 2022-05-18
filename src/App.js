@@ -1,5 +1,7 @@
 //Dependencies
-import { Routes, Route } from 'react-router-dom'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
 //Components
 
 //Pages
@@ -11,14 +13,16 @@ import NavBar from './Components/NavBar';
 
 
 function App() {
-  return <div className="App">
-    <NavBar />
-    <Routes>
-      <Route exact path="/"  element={<Home />}/>
-      <Route path="/categories" element={<Categories />}/>
-      <Route path="/NFT" element={<NFT />}/>
-    </Routes>
-  </div>;
+  return (
+    <div className="App">
+      <NavBar />
+      <Routes>
+        <Route exact path="/"  element={<Home />}/>
+        <Route path="/categories" element={<Categories />}/>
+        <Route path="/NFT" element={<NFT />}/>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
