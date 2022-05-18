@@ -17,6 +17,9 @@ export default function NFT() {
       })
       .catch((error) => {
         throw error;
+      })
+      .catch((error) => {
+        throw error;
       });
   }, [URL]);
 
