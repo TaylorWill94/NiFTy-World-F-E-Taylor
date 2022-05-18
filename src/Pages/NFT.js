@@ -14,9 +14,10 @@ export default function NFT() {
     axios
       .get(`${URL}/content`)
       .then((response) => {
-        setContent(response.data)
-      }).catch((error) => {
-        throw error; 
+        setContent(response.data);
+      })
+      .catch((error) => {
+        throw error;
       });
   }, [URL]);
 
@@ -87,11 +88,7 @@ export default function NFT() {
               </div>
             );
           })}
-      <br />
-      <br />
       <Videos />
-      <br />
-      <br />
       <video className="little-lady" width="750" height="500" controls>
         <source src={nftvideo} type="video/mp4" />
       </video>
