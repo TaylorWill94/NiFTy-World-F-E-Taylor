@@ -22,7 +22,7 @@ function Quiz() {
     <Card key={index}>
       <Card.Body>{question.answer}</Card.Body>
     </Card>
-  )); 
+  ));
 
   
 
