@@ -7,10 +7,11 @@ import "./Home.css";
 function Home() {
   return (
     <div ClassName="home">
+      <div></div>
       {/* <img src={desktopHomeImage} className="HomeImage" alt="Cartoon People" /> */}
       <div className="text">
         <strong>
-          <h3>Learn about NFTs, Money, and Cryptocurrency!</h3>
+          <h3>Learn about NFTs, Money Matters, and Cryptocurrency!</h3>
         </strong>{" "}
       </div>
     </div>
