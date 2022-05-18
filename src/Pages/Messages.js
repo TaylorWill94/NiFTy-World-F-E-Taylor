@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import MessageForm from "./MessageForm";
 
 export default function Messages() {
   const [comments, setComments] = useState([]);
@@ -18,6 +19,7 @@ export default function Messages() {
 
   return (
     <div>
+      <MessageForm />
       <h1>Please put your comment here!!</h1>
       {comments.map((c, index) => {
         return (

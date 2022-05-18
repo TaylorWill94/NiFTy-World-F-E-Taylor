@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function NewComment() {
+function MessageForm() {
   const API = process.env.REACT_APP_API_URL;
   let navigate = useNavigate();
 
@@ -11,7 +11,7 @@ function NewComment() {
       .post(`${API}/comments`, addComment)
       .then(
         () => {
-          navigate("/comments");
+          navigate("/messages", { replace: true });
         },
         (error) => console.error(error)
       )
@@ -28,12 +28,8 @@ function NewComment() {
     setNewComment({ ...newComment, [event.target.id]: event.target.value });
   };
 
-  const handleCheckBox = () => {
-    setNewComment({ ...newComment, featured: !newComment.featured });
-  };
-
   const handleSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     addedComment(newComment);
   };
 
@@ -66,11 +62,11 @@ function NewComment() {
         <label htmlFor="date">DATE:</label>
         <br />
         <input
-          type="number"
-          id="price"
-          value={newCandle.price}
+          type="text"
+          id="date"
+          value={newComment.date}
           onChange={handleText}
-          placeholder="$$$"
+          placeholder="0"
         />
         <br />
         <input type="submit" />
@@ -81,4 +77,4 @@ function NewComment() {
   );
 }
 
-export default NewCandle;
+export default MessageForm;

@@ -11,6 +11,7 @@ import Categories from "./Pages/Categories";
 import NFT from "./Pages/NFT";
 import Messages from "./Pages/Messages";
 
+
 function App() {
   return (
     <div>
