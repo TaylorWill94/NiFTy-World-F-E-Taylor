@@ -1,6 +1,9 @@
 //Dependencies
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
+
 //Components
+import NavBar from "./Components/NavBar";
 
 //Pages
 import Home from "./Pages/Home";
@@ -10,7 +13,8 @@ import Messages from "./Pages/Messages";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
