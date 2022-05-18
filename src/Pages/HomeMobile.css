@@ -1,0 +1,130 @@
+/* Rectangle 1 */
+.PhoneScreen {
+  position: absolute;
+  width: 572px;
+  height: 1046px;
+  border-radius: 20px;
+}
+/* NFTy World */
+.AppName {
+  position: absolute;
+  width: 242px;
+  height: 70px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 61px;
+  text-align: center;
+  color: #f5dc56;
+}
+/* Rectangle 10 */
+.Button {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+
+  color: #ffffff;
+  background: #251d5c;
+  position: absolute;
+  width: 313px;
+  height: 90px;
+
+  border-radius: 20px;
+  position: absolute;
+  width: 313px;
+  height: 82px;
+  font-family: "Inter";
+}
+
+/* Rectangle 11 */
+
+/* position: absolute;
+  width: 313px;
+  height: 90px;
+  
+  background: #251d5c;
+  border-radius: 20px; */
+
+/* Log In */
+
+/* position: absolute;
+  width: 313px;
+  height: 82px;
+  
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  
+  color: #ffffff; */
+
+/* Sign Up */
+
+/* position: absolute;
+  width: 354px;
+  height: 86px;
+  
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  
+  color: #ffffff; */
+
+/* Welcome To NFTy World! Let’s learn about everything NFT’s, cryptos and finance! */
+
+.WelcomeText {
+  position: absolute;
+  width: 440px;
+  height: 221px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+}
+/* Star 1 */
+.StarTwo {
+  position: absolute;
+  width: 77px;
+  height: 90px;
+}
+
+/* Star 2 */
+.StarOne {
+  position: absolute;
+  top: -382px;
+  left: -43px;
+  width: 77px;
+  height: 90px;
+  align-items: right;
+}
+
+/* Star 3 */
+.StarThree {
+  position: absolute;
+  width: 77px;
+  height: 72px;
+}
+/* Star 4 */
+.StarFour {
+  position: absolute;
+  width: 68px;
+  height: 62px;
+}
+.FriendlyOnesAvatar {
+  position: absolute;
+  width: 192px;
+  height: 265px;
+
+  background: url(.png);
+}

@@ -14,9 +14,11 @@ export default function NFT() {
     axios
       .get(`${URL}/content`)
       .then((response) => {
-        setContent(response.data)
-      }).catch((error) => {
-        throw error; 
+
+        setContent(response.data);
+      })
+      .catch((error) => {
+        throw error
       });
   }, [URL]);
 
