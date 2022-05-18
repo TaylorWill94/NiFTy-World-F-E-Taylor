@@ -1,30 +1,94 @@
-import { useState, useEffect }from 'react'
-import Videos from '../Components/Videos'
-import axios from 'axios'
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Videos from "../Components/Videos";
+import axios from "axios";
 
 export default function NFT() {
-  const [content, setContent] = useState([])
-  const URL = process.env.REACT_APP_API_URL
+  const [content, setContent] = useState([]);
+  const [show, setShow] = useState(true);
+  const [changeText, setChangeText] = useState("Learn");
+  const URL = process.env.REACT_APP_API_URL;
 
-  useEffect(()=> {
-    axios.get(`${URL}/content`)
+  useEffect(() => {
+    axios
+      .get(`${URL}/content`)
       .then((response) => {
         setContent(response.data)
       }).catch((error) => {
-        throw error 
-      })
-  }, [URL])
+        throw error; 
+      });
+  }, [URL]);
 
-  
+  let nft = content.map((c, index) => (
+    <div key={index}>{c.reading_material}</div>
+  ));
+
+  const showNft = () => {
+    setShow((text) => !text);
+  };
+
+  const changeBtnText = () => {
+    setChangeText(":D");
+  };
+
+  const closeBtn = () => {
+    setChangeText("Click");
+  };
+
+  // const changeBtn = (changeText) => {
+  //   if (setShow === "true") {
+  //     changeText("Close");
+  //   } else {
+  //     changeText("Learn");
+  //   }
+  // };
+
   return (
-    <div>
-        <h1>What is an NFT?</h1>
-        {content.map((c, index)=> {return (
-          <div key={index}>
-            {c.reading_material}
-          </div>
-        )})}
-        <Videos />
+    <div className="nft">
+      <h1 className="app-heading">NiFTY World</h1>
+      <Link to="/">
+        <h1 className="nft-home-btn">Home</h1>
+      </Link>
+      <br />
+      <br />
+      <h1 className="nft-heading">What is an NFT?</h1>
+      <br />
+      <br />
+      {{ nft } ? (
+        <button
+          className="nft-learn-btn"
+          onClick={() => {
+            showNft();
+            changeBtnText();
+          }}
+        >
+          {changeText}
+        </button>
+      ) : (
+        <button
+          className="nft-learn-btn"
+          onClick={() => {
+            showNft();
+            closeBtn();
+          }}
+        >
+          {changeText}
+        </button>
+      )}
+      <br />
+      <br />
+      {show
+        ? ""
+        : content.map((c, index) => {
+            return (
+              <div className="nft-info" key={index}>
+                {c.reading_material}
+              </div>
+            );
+          })}
+      <Videos />
+      <video className="little-lady" width="750" height="500" controls></video>
+      <button className="next-btn">Next</button>
     </div>
-  )
+  );
 }
