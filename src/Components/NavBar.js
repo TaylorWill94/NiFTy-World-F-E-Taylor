@@ -10,6 +10,7 @@ function NavBar() {
             <Nav className="me-auto">
                 <Nav.Link href="/about">About</Nav.Link>
                 <Nav.Link href="/categories">Categories</Nav.Link>
+                <Nav.Link href="/messages">Messages</Nav.Link>
                 <Nav.Link href="#link">Log in</Nav.Link>
                 <Nav.Link href="#link">Sign Up</Nav.Link>
             </Nav>
