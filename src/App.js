@@ -9,7 +9,7 @@ import NFT from "./Pages/NFT"
 
 
 function App() {
-  return <div className="App">
+  return <div>
     <Routes>
       <Route exact path="/"  element={<Home />}/>
       <Route path="/categories" element={<Categories />}/>
