@@ -1,38 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.nft {
+  padding-top: 35px;
+  background-color: white;
   text-align: center;
+  grid-column: 2;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-heading {
+  color: #f5dc56;
+  padding-top: 20px;
+  position: absolute;
+  left: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nft-home-btn {
+  padding-top: 20px;
+  position: absolute;
+  right: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nft-heading {
+  background-color: yellow;
+  padding: 50px;
+  margin-top: 20px;
+  border-radius: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.nft-info {
+  background-color: #d9d9d9;
+  padding: 20px;
+  border-radius: 12px;
+  transition-duration: 4s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nft-info:hover {
+  background-color: blue;
+}
+
+.nft-learn-btn {
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.little-lady {
+  border: 1px solid blue;
+}
+
+.next-btn {
+  position: absolute;
+  right: 50px;
+  padding: 10px;
+  border-radius: 12px;
 }
