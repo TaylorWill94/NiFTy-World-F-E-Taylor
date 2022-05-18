@@ -9,6 +9,8 @@ import Home from "./Pages/Home";
 import Categories from "./Pages/Categories";
 import NFT from "./Pages/NFT";
 import NavBar from "./Components/NavBar";
+import Quiz from "./Pages/Quiz";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/NFT" element={<NFT />} />
+        <Route path="/quiz" element={<Quiz />} />
       </Routes>
     </div>
   );
