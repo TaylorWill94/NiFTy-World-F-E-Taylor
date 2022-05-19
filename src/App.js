@@ -12,7 +12,6 @@ import NFT from "./Pages/NFT";
 import Messages from "./Pages/Messages";
 import Quiz from "./Pages/Quiz";
 
-
 function App() {
   return (
     <div>
