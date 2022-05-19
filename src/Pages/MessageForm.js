@@ -11,7 +11,7 @@ function MessageForm() {
       .post(`${API}/comments`, addComment)
       .then(
         () => {
-          navigate("/messages", { replace: true });
+          navigate("/comments", { replace: true });
         },
         (error) => console.error(error)
       )
