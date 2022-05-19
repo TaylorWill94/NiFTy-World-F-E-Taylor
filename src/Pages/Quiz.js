@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { Container, Card, Stack } from 'react-bootstrap'
 import {useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 
 function Quiz() {
   const [quiz, setQuiz] = useState([])
@@ -19,9 +20,13 @@ function Quiz() {
   }, [URL]);
 
   let questions = quiz.map((question, index) => (
-    <Card key={index}>
-      <Card.Body>{question.answer}</Card.Body>
-    </Card>
+    <Link to="/correct">
+      <Card key={index}>
+        <Card.Body>
+          <Card.Text>{question.answer}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Link>
   ));
 
   
@@ -31,9 +36,13 @@ function Quiz() {
       <h1>Let's test your knowledge on what you've learned!</h1>
       <h2>What is an NFT?</h2>
       <Stack className="mt-4" gap='3'>
-        <Card>
-          <Card.Body>A token to purchase snacks</Card.Body>
-        </Card>
+        <Link to="/tryagain">
+          <Card>
+            <Card.Body>
+              <Card.Text>A token to purchase snacks</Card.Text>
+            </Card.Body>
+          </Card>
+        </Link>
         {questions}
       </Stack>
     </Container>
