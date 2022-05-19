@@ -92,7 +92,9 @@ export default function NFT() {
       <video className="little-lady" width="750" height="500" controls>
         <source src={nftvideo} type="video/mp4" />
       </video>
-      <button className="next-btn">Next</button>
+      <Link to="/quiz">
+        <button className="next-btn">Next</button>
+      </Link>
     </div>
   );
 }
