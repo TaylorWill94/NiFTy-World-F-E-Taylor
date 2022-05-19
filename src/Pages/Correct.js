@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Correct.css";
-import boyjoy from "../boyjoy.jpg";
-import background from "../boyjoy.jpg";
+//import boyjoy from "../boyjoy.jpg";
+//import background from "../boyjoy.jpg";
 
 // import styles from "./Background.module.css";
 
