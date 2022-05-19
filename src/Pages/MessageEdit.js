@@ -1,60 +1,71 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import MessageForm from "./MessageForm";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-export default function Comments() {
-  const [comments, setComments] = useState([]);
+const EditComment = () => {
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
+  const navigate = useNavigate();
 
+  const [comment, setComment] = useState({
+    name: "",
+    post: "",
+    date: "",
+  });
 
   useEffect(() => {
     axios
-      .get(`${URL}/comments`)
+      .get(`${URL}/comments/${id}`)
       .then((response) => {
-        setComments(response.data);
+        setComment(response.data);
       })
       .catch((error) => {
-        throw error;
+        navigate("*");
       });
-  }, [URL]);
+  }, [URL, id, navigate]);
 
-  const HandleDelete = (event) => {
-    axios.delete(
-      `${URL}/comments/${event.target.id}`,
-      comments[event.target.id]
-    );
-    // eslint-disable-next-line
-    setComments(comments.filter((obj) => obj.id != event.target.id));
+  const handleTextChange = (event) => {
+    console.log(comment);
+    setComment({ ...comment, [event.target.id]: event.target.value });
   };
-console.log(id)
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.put(`${URL}/comments/${id}`, comment).then((res) => {
+      navigate(`/comments`);
+    });
+  };
+  console.log(comment);
   return (
-    <div>
-      <MessageForm />
-      <h1>Please add a comment here!!</h1>
-      {comments.map((c, index) => {
-        return (
-          <div key={index}>
-            {c.name}
-            <div>{c.post}</div>;<div>{c.date}</div>;
-            <div>
-              {" "}
-              <button id={c.id} onClick={HandleDelete}>
-                Delete{" "}
-              </button>{" "}
-            </div>
-            <Link to={`/comments/${c.id}/edit`}>
-              {" "}
-              <button>Edit </button>{" "}
-            </Link>
-          </div>
-        );
-      })}
+    <div className="editForm">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name</label>
+        <input
+          id="name"
+          value={comment.name}
+          type="text"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="post">Post</label>
+        <input
+          id="post"
+          value={comment.post}
+          type="text"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="date">Date</label>
+        <input
+          id="date"
+          value={comment.date}
+          type="text"
+          onChange={handleTextChange}
+        />
+        <input type="submit" />
+      </form>
     </div>
   );
-}
+};
+export default EditComment;
 
 // import axios from "axios";
 // import { useState } from "react";
@@ -64,23 +75,21 @@ console.log(id)
 //   const API = process.env.REACT_APP_API_URL;
 //   const { id } = useParams();
 //   let navigate = useNavigate();
-
 //   const [editComment, setEditComment] = useState({
 //     name: "",
 //     post: "",
 //     date: "",
 //   });
+//   console.log(`${API}/comments/${id}`);
 
 //   const editedComment = (editComment) => {
-//     axios
-//       .put(`${API}/comments/${id}`, editComment)
-//       .then(
-//         () => {
-//           navigate(`/comments/${id}`);
-//         },
-//         (error) => console.warn(error)
-//       )
-//       .catch((c) => console.warn("catch", c));
+//     axios.put(`${API}/comments/${id}`, editComment).then(
+//       () => {
+//         navigate(`/messages`);
+//       },
+//       (error) => console.warn(error)
+//     );
+//     console.log(editComment).catch((c) => console.warn("catch", c));
 //   };
 
 //   const handleText = (event) => {
