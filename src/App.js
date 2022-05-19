@@ -12,6 +12,8 @@ import NFT from "./Pages/NFT";
 import Messages from "./Pages/Messages";
 import MessageEdit from "./Pages/MessageEdit";
 import Quiz from "./Pages/Quiz";
+import TryAgain from "./Pages/TryAgain";
+import Correct from "./Pages/Correct";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/comments" element={<Messages />} />
         <Route path="/comments/:id/edit" element={<MessageEdit />} />
         <Route path="/quiz" element={<Quiz />} />
+        <Route path="/tryagain" element={<TryAgain />} />
+        <Route path="/correct" element={<Correct />} />
       </Routes>
     </div>
   );
