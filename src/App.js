@@ -27,7 +27,7 @@ function App() {
         <Route path="/comments/:id/edit" element={<MessageEdit />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/tryagain" element={<TryAgain />} />
-        <Route path="/correct" element={<Correct />} />
+        <Route path="/correct" element={<Correct />} />   
       </Routes>
     </div>
   );
