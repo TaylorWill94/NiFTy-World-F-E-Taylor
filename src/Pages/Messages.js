@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import MessageForm from "./MessageForm";
 import { useParams } from "react-router";
+import { Card } from "react-bootstrap";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
-
 
   useEffect(() => {
     axios
@@ -29,7 +29,7 @@ export default function Comments() {
     // eslint-disable-next-line
     setComments(comments.filter((obj) => obj.id != event.target.id));
   };
-console.log(id)
+  console.log(id);
 
   return (
     <div>
@@ -37,20 +37,23 @@ console.log(id)
       <h1>Please add a comment here!!</h1>
       {comments.map((c, index) => {
         return (
-          <div key={index}>
-            {c.name}
-            <div>{c.post}</div>;<div>{c.date}</div>;
-            <div>
-              {" "}
-              <button id={c.id} onClick={HandleDelete}>
-                Delete{" "}
-              </button>{" "}
-            </div>
-            <Link to={`/comments/${c.id}/edit`}>
-              {" "}
-              <button>Edit </button>{" "}
-            </Link>
-          </div>
+          <Card key={index}>
+            <Card.Body>
+              {c.name}
+              <div>{c.post}</div>
+              <div>{c.date}</div>
+              <div>
+                {" "}
+                <button id={c.id} onClick={HandleDelete}>
+                  Delete{" "}
+                </button>{" "}
+              </div>
+              <Link to={`/comments/${c.id}/edit`}>
+                {" "}
+                <button>Edit </button>{" "}
+              </Link>
+            </Card.Body>
+          </Card>
         );
       })}
     </div>
