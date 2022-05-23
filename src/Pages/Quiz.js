@@ -28,6 +28,7 @@ function Quiz() {
       </Card>
     </Link>
   ));
+ 
 
   
 
