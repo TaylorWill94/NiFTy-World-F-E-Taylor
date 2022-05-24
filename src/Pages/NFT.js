@@ -48,10 +48,6 @@ export default function NFT() {
 
   return (
     <div className="nft">
-      <h1 className="app-heading">NiFTY World</h1>
-      <Link to="/">
-        <h1 className="nft-home-btn">Home</h1>
-      </Link>
       <br />
       <br />
       <h1 className="nft-heading">What is an NFT?</h1>
