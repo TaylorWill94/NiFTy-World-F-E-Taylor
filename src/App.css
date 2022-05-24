@@ -60,6 +60,7 @@
 .next-btn {
   position: absolute;
   right: 50px;
+  top: 130%;
   padding: 10px;
   border-radius: 12px;
 }
