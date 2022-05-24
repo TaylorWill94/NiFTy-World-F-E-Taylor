@@ -13,6 +13,7 @@ import Messages from "./Pages/Messages";
 import Quiz from "./Pages/Quiz";
 import TryAgain from "./Pages/TryAgain";
 import Correct from "./Pages/Correct";
+import NFT_Content from "Pages/NFT_Content";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/tryagain" element={<TryAgain />} />
         <Route path="/correct" element={<Correct />} />
+        <Route path="/nftcontent" element={<NFT_Content />} />
       </Routes>
     </div>
   );
