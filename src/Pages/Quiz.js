@@ -11,7 +11,6 @@ function Quiz() {
     axios
       .get(`${URL}/questions`)
       .then((response) => {
-        console.log(response.data);
         setQuiz(response.data);
       })
       .catch((error) => {
@@ -46,7 +45,7 @@ function Quiz() {
         </Stack>
       </Container>
       <Link to="/nftcontent">
-        <button>Next</button>
+        <button className="nft-learn-btn">Next</button>
       </Link>
     </>
   );

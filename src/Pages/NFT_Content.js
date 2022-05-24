@@ -17,7 +17,7 @@ function NFT_Content() {
     <div className="nft-content">
       <br />
       <br />
-      <h1>NFT Content</h1>
+      <h1>Let's Learn!</h1>
       <br />
       <br />
       <p>What does fungibility mean?</p>
