@@ -14,7 +14,7 @@ function NFT_Content() {
   };
 
   return (
-    <div>
+    <div className="nft-content">
       <br />
       <br />
       <h1>NFT Content</h1>
@@ -30,6 +30,7 @@ function NFT_Content() {
       <br />
       <br />
       <button
+        className="nft-learn-btn"
         onClick={() => {
           showNft();
           changeBtnText();
@@ -40,7 +41,7 @@ function NFT_Content() {
       <br />
       <br />
       <Link to="/">
-        <button>Next</button>
+        <button className="nft-learn-btn">Next</button>
       </Link>
     </div>
   );
