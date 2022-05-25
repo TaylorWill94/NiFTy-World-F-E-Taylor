@@ -6,7 +6,7 @@ function Categories() {
   return (
     <Container>
       <h1>Choose your category</h1>
-      <Link to="/NFT">
+      <Link to="/categories/NFT">
         <Button variant="primary">NFT</Button>
       </Link>
       <Button>Crypto</Button>
