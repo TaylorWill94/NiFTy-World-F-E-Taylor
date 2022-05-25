@@ -21,7 +21,7 @@ function MessageForm() {
   const [newComment, setNewComment] = useState({
     name: "",
     post: "",
-    // date: "",
+    date: "",
   });
 
   const handleText = (event) => {
@@ -59,7 +59,7 @@ function MessageForm() {
           placeholder="Type here"
         />
         <br />
-        {/* <label htmlFor="date">DATE:</label>
+        <label htmlFor="date">DATE:</label>
         <br />
         <input
           type="text"
@@ -67,7 +67,7 @@ function MessageForm() {
           value={newComment.date}
           onChange={handleText}
           placeholder="0"
-        /> */}
+        />
         <br />
         <input type="submit" />
       </form>
