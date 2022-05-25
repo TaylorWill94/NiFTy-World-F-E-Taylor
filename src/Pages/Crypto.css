@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.crypto {
+  padding-top: 35px;
+  background-color: white;
+  text-align: center;
+  grid-column: 2;
+}
+
+.app-heading {
+  color: #f5dc56;
+  padding-top: 20px;
+  position: absolute;
+  left: 50px;
+}
+
+.crypto-home-btn {
+  padding-top: 20px;
+  position: absolute;
+  right: 50px;
+}
+
+.crypto-heading {
+  background-color: yellow;
+  padding: 50px;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.crypto-info {
+  background-color: #d9d9d9;
+  padding: 20px;
+  border-radius: 12px;
+  transition-duration: 4s;
+}
+
+.crypto-info:hover {
+  background-color: blue;
+}
+
+.crypto-learn-btn {
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.crypto-cartoon-video {
+  border: 1px solid blue;
+}
+
+.next-btn {
+  position: absolute;
+  right: 50px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .App {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .nft {
+    text-align: center;
+  }
+
+  .app-heading {
+    display: none;
+  }
+
+  .nft-home-btn {
+    display: none;
+  }
+
+  .nft-heading {
+    font-size: 16px;
+    position: absolute;
+    left: 50px;
+  }
+
+  .nft-learn-btn {
+    position: absolute;
+    right: 35%;
+    bottom: 5px;
+  }
+
+  .nft-info {
+    font-size: 14px;
+    position: absolute;
+    top: 100%;
+    right: 10%;
+  }
+
+  .next-btn {
+    display: none;
+  }
+
+  .little-lady {
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    right: 30%;
+    bottom: 50px;
+  }
+}
