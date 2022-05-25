@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import MessageForm from "./MessageForm";
 import { useParams } from "react-router";
+import { Card } from "react-bootstrap";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
