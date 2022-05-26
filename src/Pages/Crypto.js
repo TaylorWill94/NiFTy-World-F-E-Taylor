@@ -1,31 +1,32 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import nftvideo from "../Components/nftvideo.mp4";
+import whatiscryptovideo from "../Components/whatiscryptovideo.mp4";
 import Videos from "../Components/Videos";
 import axios from "axios";
+import "./Crypto.css";
 
-export default function NFT() {
-  const [content, setContent] = useState([]);
+export default function Crypto() {
+  const [lesson, setLesson] = useState([]);
   const [show, setShow] = useState(true);
   const [changeText, setChangeText] = useState("Learn");
   const URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     axios
-      .get(`${URL}/lessons`)
+      .get(`${URL}/lesson`)
       .then((response) => {
-        setContent(response.data);
+        setLesson(response.data);
       })
       .catch((error) => {
         throw error;
       });
   }, [URL]);
 
-  let nft = content.map((c, index) => (
+  let crypto = lesson.map((c, index) => (
     <div key={index}>{c.reading_material}</div>
   ));
 
-  const showNft = () => {
+  const showCrypto = () => {
     setShow((text) => !text);
   };
 
@@ -46,21 +47,21 @@ export default function NFT() {
   // };
 
   return (
-    <div className="nft">
+    <div className="crypto">
       <h1 className="app-heading">NiFTY World</h1>
       <Link to="/">
-        <h1 className="nft-home-btn">Home</h1>
+        <h1 className="crypto-home-btn">Home</h1>
       </Link>
       <br />
       <br />
-      <h1 className="nft-heading">What is an NFT?</h1>
+      <h1 className="crypto-heading">What is Cryptocurrency?</h1>
       <br />
       <br />
-      {{ nft } ? (
+      {{ crypto } ? (
         <button
-          className="nft-learn-btn"
+          className="crypto-learn-btn"
           onClick={() => {
-            showNft();
+            showCrypto();
             changeBtnText();
           }}
         >
@@ -68,9 +69,9 @@ export default function NFT() {
         </button>
       ) : (
         <button
-          className="nft-learn-btn"
+          className="crypto-learn-btn"
           onClick={() => {
-            showNft();
+            showCrypto();
             closeBtn();
           }}
         >
@@ -81,21 +82,19 @@ export default function NFT() {
       <br />
       {show
         ? ""
-        : content.map((c, index) => {
+        : lesson.map((c, index) => {
             return (
-              <div className="nft-info" key={index}>
+              <div className="crypto-info" key={index}>
                 {c.reading_material}
               </div>
             );
           })}
       <Videos />
-      <video className="little-lady" width="750" height="500" controls>
-        <source src={nftvideo} type="video/mp4" />
+      <video className="crypto-cartoon-video" width="750" height="500" controls>
+        <source src={whatiscryptovideo} type="video/mp4" />
       </video>
-      <Link to={`/questions`}>
 
-        <button className="next-btn">Next</button>
-      </Link>
+      <button className="next-btn">Next</button>
     </div>
   );
 }

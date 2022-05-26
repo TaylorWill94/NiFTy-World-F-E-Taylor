@@ -16,6 +16,7 @@ import Questions from "./Pages/Questions";
 // import TryAgain from "./Pages/TryAgain";
 // import Correct from "./Pages/Correct";
 
+
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
+
         <Route path="/categories/:id" element={<LessonsList/>} />
         <Route path="/categories/:id/lessons/:id" element={<NFT />} />
         
