@@ -5,7 +5,7 @@ import Videos from "../Components/Videos";
 import axios from "axios";
 
 export default function NFT() {
-  const [content, setContent] = useState([]);
+  const [content, setContent] = useState({});
   const [show, setShow] = useState(true);
   const [changeText, setChangeText] = useState("Learn");
   const URL = process.env.REACT_APP_API_URL;
@@ -22,9 +22,9 @@ export default function NFT() {
       });
   }, [URL]);
 
-  let nft = content.map((c, index) => (
-    <div key={index}>{c.reading_material}</div>
-  ));
+  // let nft = content.map((c, index) => (
+  //   <div key={index}>{c.reading_material}</div>
+  // ));
 
   const showNft = () => {
     setShow((text) => !text);
@@ -57,7 +57,8 @@ export default function NFT() {
       <h1 className="nft-heading">What is an NFT?</h1>
       <br />
       <br />
-      {{ nft } ? (
+      {/* {content.lesson_title} */}
+      { content.lesson_title  ? (
         <button
           className="nft-learn-btn"
           onClick={() => {
