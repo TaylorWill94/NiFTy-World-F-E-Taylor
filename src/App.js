@@ -11,10 +11,10 @@ import Home from "./Pages/Home";
 import Categories from "./Pages/Categories";
 import LessonsList from "./Pages/LessonsList";
 // import Lessons from "./Pages/Lessons";
-// import Messages from "./Pages/Messages";
+import Messages from "./Pages/Messages";
 import Questions from "./Pages/Questions";
-// import TryAgain from "./Pages/TryAgain";
-// import Correct from "./Pages/Correct";
+import TryAgain from "./Pages/TryAgain";
+import Correct from "./Pages/Correct";
 
 
 function App() {
@@ -38,10 +38,10 @@ function App() {
         {/* <Route path="/comments/:id/edit" element={<CommentsEditForm />} /> */}
         {/* <Route path="*" element={<FourOhFour />} /> */}
 
-        {/* <Route path="/messages" element={<Messages />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/tryagain" element={<TryAgain />} />
-        <Route path="/correct" element={<Correct />} /> */}
+        <Route path="/comments" element={<Messages />} />
+        {/* <Route path="/quiz" element={<Quiz />} /> */}
+        {/* <Route path="/tryagain" element={<TryAgain />} /> */}
+        {/* <Route path="/correct" element={<Correct />} /> */}
       </Routes>
     </div>
   );

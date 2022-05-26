@@ -23,7 +23,7 @@ export default function Comments() {
 
   const HandleDelete = (event) => {
     axios.delete(
-      `${URL}/comments/${event.target.id}`,
+      `${URL}/messages/${event.target.id}`,
       comments[event.target.id]
     );
     // eslint-disable-next-line

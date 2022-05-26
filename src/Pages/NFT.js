@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link , useParams} from "react-router-dom";
 import nftvideo from "../Components/nftvideo.mp4";
 import Videos from "../Components/Videos";
 import axios from "axios";
@@ -9,10 +9,11 @@ export default function NFT() {
   const [show, setShow] = useState(true);
   const [changeText, setChangeText] = useState("Learn");
   const URL = process.env.REACT_APP_API_URL;
+  const { id } = useParams()
 
   useEffect(() => {
     axios
-      .get(`${URL}/lessons`)
+      .get(`${URL}/lessons/${id}`)
       .then((response) => {
         setContent(response.data);
       })
