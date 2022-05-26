@@ -9,7 +9,7 @@ function Categories() {
   const { id } = useParams()
 
   useEffect(()=>{
-      axios.get(`${URL}/categories/${id}`)
+      axios.get(`${URL}/categories`)
         .then((response)=> {
           setCategory(response.data)
         })
@@ -17,18 +17,17 @@ function Categories() {
           throw error
         })
 
-  },[URL])
+  },[id, URL])
 
   return (
     <Container>
       <h1>Choose your category</h1>
       {category.map((category, index) => (
-        <Link to={`/${category.name}`}>
-          <Button key={category.name}>
-          {category}
+        <Link key={index} to={`/categories/${category.id}`}>
+          <Button>
+          {category.name}
           </Button>
         </Link>
-        
 
       ))}
     </Container>

@@ -12,7 +12,7 @@ export default function NFT() {
 
   useEffect(() => {
     axios
-      .get(`${URL}/content`)
+      .get(`${URL}/lessons`)
       .then((response) => {
         setContent(response.data);
       })
@@ -92,7 +92,9 @@ export default function NFT() {
       <video className="little-lady" width="750" height="500" controls>
         <source src={nftvideo} type="video/mp4" />
       </video>
-      <button className="next-btn">Next</button>
+      <Link to={`/questions`}>
+        <button className="next-btn">Next</button>
+      </Link>
     </div>
   );
 }
