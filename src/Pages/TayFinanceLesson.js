@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import nftvideo from "../Components/nftvideo.mp4";
+// import nftvideo from "../Components/nftvideo.mp4";
 // import Videos from "../Components/Videos";
 import axios from "axios";
 
-export default function NFT() {
-  const [content, setContent] = useState({});
+export default function TayFinanceLesson() {
+  const [content, setContent] = useState([]);
   const [show, setShow] = useState(true);
   const [changeText, setChangeText] = useState("Learn");
   const URL = process.env.REACT_APP_API_URL;
@@ -22,9 +22,9 @@ export default function NFT() {
       });
   }, [id, URL]);
 
-  // let nft = content.map((c, index) => (
-  //   <div key={index}>{c.reading_material}</div>
-  // ));
+  let nft = content.map((c, index) => (
+    <div key={index}>{c.reading_material}</div>
+  ));
 
   const showNft = () => {
     setShow((text) => !text);
@@ -50,10 +50,10 @@ export default function NFT() {
     <div className="nft">
       <br />
       <br />
-      <h1 className="nft-heading">What is an NFT?</h1>
+      <h1 className="nft-heading">What is Finance?</h1>
       <br />
       <br />
-      {content.reading_material ? (
+      {{ nft } ? (
         <button
           className="nft-learn-btn"
           onClick={() => {
@@ -76,10 +76,19 @@ export default function NFT() {
       )}
       <br />
       <br />
-      {show ? "" : content.reading_material}
-      <video className="little-lady" width="750" height="500" controls>
+      {show
+        ? ""
+        : content.map((c, index) => {
+            return (
+              <div className="nft-info" key={index}>
+                {c.reading_material}
+              </div>
+            );
+          })}
+      {/* <Videos /> */}
+      {/* <video className="little-lady" width="750" height="500" controls>
         <source src={nftvideo} type="video/mp4" />
-      </video>
+      </video> */}
       <Link to={`/questions`}>
         <button className="next-btn">Next</button>
       </Link>

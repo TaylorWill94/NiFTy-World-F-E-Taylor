@@ -1,17 +1,17 @@
-import axios from 'axios'
-import { Container, Card, Stack } from 'react-bootstrap'
-import {useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import axios from "axios";
+import { Container, Card, Stack } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Questions() {
-  const [questions, setQuestions] = useState([])
+  const [questions, setQuestions] = useState([]);
   const URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     axios
       .get(`${URL}/questions`)
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         setQuestions(response.data);
       })
       .catch((error) => {
@@ -28,15 +28,12 @@ function Questions() {
       </Card>
     </Link>
   ));
- 
-
-  
 
   return (
     <Container>
       <h1>Let's test your knowledge on what you've learned!</h1>
       <h2>What is an NFT?</h2>
-      <Stack className="mt-4" gap='3'>
+      <Stack className="mt-4" gap="3">
         <Link to="/tryagain">
           <Card>
             <Card.Body>
@@ -47,7 +44,7 @@ function Questions() {
         {quiz}
       </Stack>
     </Container>
-  )
+  );
 }
 
-export default Questions
+export default Questions;
