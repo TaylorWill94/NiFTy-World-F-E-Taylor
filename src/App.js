@@ -39,6 +39,7 @@ function App() {
         {/* <Route path="*" element={<FourOhFour />} /> */}
 
         <Route path="/comments" element={<Messages />} />
+        <Route path="/nftcontent" element={<NFT_Content />} />
         {/* <Route path="/quiz" element={<Quiz />} /> */}
         {/* <Route path="/tryagain" element={<TryAgain />} /> */}
         {/* <Route path="/correct" element={<Correct />} /> */}
