@@ -6,7 +6,7 @@ import "./Home.css";
 
 function Home() {
   return (
-    <div ClassName="home">
+    <div className="home">
       <div></div>
       {/* <img src={desktopHomeImage} className="HomeImage" alt="Cartoon People" /> */}
       <div className="text">
