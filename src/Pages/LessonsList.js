@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import nftvideo from "../Components/nftvideo.mp4";
 // import Videos from "../Components/Videos";
 import axios from "axios";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 
 export default function LessonList() {
   // const [content, setContent] = useState({});
@@ -41,15 +41,19 @@ export default function LessonList() {
   //   </Button>
   // ));
 
-  let lessonList = lessons.map((lesson, i) => (
-    <Button key={i} href={`/categories/${lesson.categories_id}/${lesson.id}`}>
-      {lesson.lesson_title}
-    </Button>
-  ));
+  // let lessonList = lessons.map((lesson, i) => (
+  //   <Button key={i} href={`/categories/${lesson.categories_id}/${lesson.id}`}>
+  //     {lesson.lesson_title}
+  //   </Button>
+  // ));
 
-  // let lessonList = lessons.map((lesson, i)=>(
-  //   <div key={i}>{lesson.lesson_title}</div>
-  // ))
+  let lessonList = lessons.map((lesson, i) => (
+    <div key={i}>
+      <Link to={`/categories/${lesson.categories_id}/${lesson.id}`}>
+        <button>{lesson.lesson_title}</button>
+      </Link>
+    </div>
+  ));
   return (
     <>
       {lessonList}
