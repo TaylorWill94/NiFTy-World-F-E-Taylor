@@ -50,7 +50,7 @@ export default function NFT() {
     <div className="nft">
       <br />
       <br />
-      <h1 className="nft-heading">What is an NFT?</h1>
+      <h1 className="nft-heading">{content.lesson_title}</h1>
       <br />
       <br />
       {content.reading_material ? (
