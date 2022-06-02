@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import nftvideo from "../Components/nftvideo.mp4";
+// import nftvideo from "../Components/nftvideo.mp4";
 // import Videos from "../Components/Videos";
 import axios from "axios";
 
@@ -21,6 +21,7 @@ export default function NFT() {
         throw error;
       });
   }, [id, URL]);
+  console.log(content.video_url);
 
   // let nft = content.map((c, index) => (
   //   <div key={index}>{c.reading_material}</div>
@@ -77,9 +78,14 @@ export default function NFT() {
       <br />
       <br />
       {show ? "" : content.reading_material}
-      <video className="little-lady" width="750" height="500" controls>
-        <source src={nftvideo} type="video/mp4" />
-      </video>
+      <video
+        className="little-lady"
+        src={content.video_url}
+        type="video/mp4"
+        width="750"
+        height="500"
+        controls
+      ></video>
       <Link to={`/questions`}>
         <button className="next-btn">Next</button>
       </Link>

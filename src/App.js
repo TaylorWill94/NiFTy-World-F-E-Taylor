@@ -33,7 +33,7 @@ function App() {
 
         {/* <Route path="/categories/:id/lessons" element={<Lessons />} />   */}
         {/* <Route path="/categories/:id/lessons/:id" element={<LessonsDetails />} /> */}
-        <Route path="/questions" element={<Questions />} />
+        <Route path="/questions/:id" element={<Questions />} />
         {/* <Route path="/categories/:id/lessons/:id" element={<Crypto />} /> */}
         {/* <Route path="/categories/:id/lessons/:id/questions/:id" element={<QuestionsDetails />} /> */}
         {/* <Route path="/comments" element={<Comments />} /> */}
