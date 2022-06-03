@@ -86,7 +86,7 @@ export default function NFT() {
         height="500"
         controls
       ></video>
-      <Link to={`/questions`}>
+      <Link to={`/questions/${id}`}>
         <button className="next-btn">Next</button>
       </Link>
     </div>

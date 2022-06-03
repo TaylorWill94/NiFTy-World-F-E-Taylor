@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Questions() {
-  const [questions, setQuestions] = useState({});
+  const [questions, setQuestions] = useState([]);
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
 
