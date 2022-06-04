@@ -35,13 +35,19 @@ function Questions() {
       <h1>Let's test your knowledge on what you've learned!</h1>
       <Stack className="mt-4" gap="3">
         <Link to="/tryagain">
-          <Card>
+          {/* <Card>
             <Card.Body>
               <Card.Text>A token to purchase snacks</Card.Text>
             </Card.Body>
-          </Card>
+          </Card> */}
         </Link>
-        {questions.question_text}
+        <h1>{questions.question_text}</h1>
+        <br />
+        <br />
+        {questions.answer}
+        <br />
+        <br />
+        {questions.wrong_answer}
       </Stack>
     </Container>
   );
