@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-// import nftvideo from "../Components/nftvideo.mp4";
+// import nftvideo from "/videos/nftvideo.mp4";
+// import cryptohistory from "/videos/cryptohistory.mp4";
 // import Videos from "../Components/Videos";
 import axios from "axios";
 
@@ -80,7 +81,7 @@ export default function NFT() {
       {show ? "" : content.reading_material}
       <video
         className="little-lady"
-        src={content.video_url}
+        src={content.videos_url}
         type="video/mp4"
         width="750"
         height="500"
