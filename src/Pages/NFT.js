@@ -21,7 +21,7 @@ export default function NFT() {
         throw error;
       });
   }, [id, URL]);
-  console.log(content.video_url);
+  console.log(content.videos_url);
 
   // let nft = content.map((c, index) => (
   //   <div key={index}>{c.reading_material}</div>
@@ -80,13 +80,13 @@ export default function NFT() {
       {show ? "" : content.reading_material}
       <video
         className="little-lady"
-        src={content.video_url}
+        src={content.videos_url}
         type="video/mp4"
         width="750"
         height="500"
         controls
       ></video>
-      <Link to={`/questions`}>
+      <Link to={`/questions/${id}`}>
         <button className="next-btn">Next</button>
       </Link>
     </div>

@@ -10,7 +10,7 @@ function Questions() {
 
   useEffect(() => {
     axios
-      .get(`${URL}/questions/${id}`)
+      .get(`${URL}/lessons/${id}/questions/${id}`)
       .then((response) => {
         console.log(response.data);
         setQuestions(response.data);
@@ -33,7 +33,6 @@ function Questions() {
   return (
     <Container>
       <h1>Let's test your knowledge on what you've learned!</h1>
-      <h2>What is an NFT?</h2>
       <Stack className="mt-4" gap="3">
         <Link to="/tryagain">
           <Card>

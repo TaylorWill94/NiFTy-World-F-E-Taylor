@@ -18,6 +18,7 @@ import Correct from "./Pages/Correct";
 import NftContent from "Pages/NftContent";
 import TayCryptoLesson from "Pages/TayCryptoLesson";
 import TayFinanceLesson from "Pages/TayFinanceLesson";
+import MessageEdit from "Pages/MessageEdit";
 // import Crypto from "Pages/Crypto";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         {/* <Route path="*" element={<FourOhFour />} /> */}
 
         <Route path="/comments" element={<Messages />} />
+        <Route path="/comments/:id/edit" element={<MessageEdit />} />
         {/* <Route path="/categories/:id/lessons/:id" element={<NFT_Content />} /> */}
         <Route path="/nftcontent" element={<NftContent />} />
         {/* <Route path="/cryptolesson" element={<TayCryptoLesson />} /> */}
