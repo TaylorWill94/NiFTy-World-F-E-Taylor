@@ -1,7 +1,5 @@
 import React from "react";
 import "./Home.css";
-// import React, { useLayoutEffect, useState } from "react";
-// import { Container } from "react-bootstrap";
 // import desktopHomeImage from "../desktopHomeImage.png";
 
 function Home() {

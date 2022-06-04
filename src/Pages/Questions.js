@@ -1,10 +1,13 @@
 import axios from "axios";
-import { Container, Card, Stack } from "react-bootstrap";
+import { Container, Stack } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import "./Question.css";
 
 function Questions() {
   const [questions, setQuestions] = useState([]);
+  const [style, setStyle] = useState("cont");
+  const [wrong, setWrong] = useState("wrong");
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
 
@@ -30,6 +33,19 @@ function Questions() {
   //   </Link>
   // ));
 
+  const changeBtnColor = () => {
+    setStyle("cont2");
+  };
+
+  const alert = () => {
+    if (setStyle("cont2")) {
+    }
+  };
+
+  const wrongBtnColor = () => {
+    setWrong("wrong2");
+  };
+
   return (
     <Container>
       <h1>Let's test your knowledge on what you've learned!</h1>
@@ -44,10 +60,28 @@ function Questions() {
         <h1>{questions.question_text}</h1>
         <br />
         <br />
-        {questions.answer}
+        {/* <button
+          className={style}
+          onClick={() => {
+            changeBtnColor();
+            alert("hello there");
+          }}
+        >
+          {questions.answer}
+        </button> */}
+        <button
+          className={style}
+          onClick={() => {
+            changeBtnColor();
+          }}
+        >
+          {questions.answer}
+        </button>
         <br />
         <br />
-        {questions.wrong_answer}
+        <button className={wrong} onClick={wrongBtnColor}>
+          {questions.wrong_answer}
+        </button>
       </Stack>
     </Container>
   );
