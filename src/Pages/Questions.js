@@ -10,7 +10,7 @@ function Questions() {
 
   useEffect(() => {
     axios
-      .get(`${URL}/questions/${id}`)
+      .get(`${URL}/lessons/${id}/questions/${id}`)
       .then((response) => {
         console.log(response.data);
         setQuestions(response.data);

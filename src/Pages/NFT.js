@@ -22,7 +22,7 @@ export default function NFT() {
         throw error;
       });
   }, [id, URL]);
-  console.log(content.video_url);
+  console.log(content.videos_url);
 
   // let nft = content.map((c, index) => (
   //   <div key={index}>{c.reading_material}</div>

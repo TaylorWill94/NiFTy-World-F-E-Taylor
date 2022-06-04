@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const EditComment = () => {
+const MessageEdit = () => {
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const EditComment = () => {
     </div>
   );
 };
-export default EditComment;
+export default MessageEdit;
 
 // import axios from "axios";
 // import { useState } from "react";
