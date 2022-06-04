@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-// import nftvideo from "/videos/nftvideo.mp4";
-// import cryptohistory from "/videos/cryptohistory.mp4";
-// import Videos from "../Components/Videos";
 import axios from "axios";
 
 export default function NFT() {

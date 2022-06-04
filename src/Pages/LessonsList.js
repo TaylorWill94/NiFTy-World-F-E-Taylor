@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-// import nftvideo from "../Components/nftvideo.mp4";
-// import Videos from "../Components/Videos";
 import axios from "axios";
-// import { Button } from "react-bootstrap";
 
 export default function LessonList() {
   // const [content, setContent] = useState({});
