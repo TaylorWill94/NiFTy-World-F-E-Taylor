@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Container, Stack } from "react-bootstrap";
+import { Container, Stack , Card} from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Question.css";
@@ -69,19 +69,23 @@ function Questions() {
         >
           {questions.answer}
         </button> */}
-        <button
+        <Card
           className={style}
           onClick={() => {
             changeBtnColor();
           }}
         >
-          {questions.answer}
-        </button>
+          <Card.Body>
+            {questions.answer}
+          </Card.Body>
+        </Card>
         <br />
         <br />
-        <button className={wrong} onClick={wrongBtnColor}>
-          {questions.wrong_answer}
-        </button>
+        <Card className={wrong} onClick={wrongBtnColor}>
+          <Card.Body>
+            {questions.wrong_answer}
+          </Card.Body>
+        </Card>
       </Stack>
     </Container>
   );
