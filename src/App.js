@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 //Components
 import NavBar from "./Components/NavBar";
-import NFT from "./Pages/NFT";
+// import NFT from "./Pages/LessonDetails";
 
 //Pages
 import Home from "./Pages/Home";
@@ -15,6 +15,7 @@ import Questions from "./Pages/Questions";
 import MessageEdit from "Pages/MessageEdit";
 import LogIn from "Pages/LogIn";
 import SignUp from "Pages/SIgnUp";
+import LessonDetails from "./Pages/LessonDetails";
 // import Crypto from "Pages/Crypto";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/:id" element={<LessonsList />} />
-        <Route path="/categories/:id/:id" element={<NFT />} />
+        <Route path="/categories/:id/:id" element={<LessonDetails />} />
         <Route path="/questions/:id" element={<Questions />} />
         <Route path="/comments" element={<Messages />} />
         <Route path="/comments/:id/edit" element={<MessageEdit />} />

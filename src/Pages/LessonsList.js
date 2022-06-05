@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+// import nftvideo from "../Components/nftvideo.mp4";
+// import Videos from "../Components/Videos";
 import axios from "axios";
+import { Button , Container, Stack} from "react-bootstrap";
 
 export default function LessonList() {
   // const [content, setContent] = useState({});
@@ -46,19 +49,22 @@ export default function LessonList() {
 
   let lessonList = lessons.map((lesson, i) => (
     <div key={i}>
-      <Link to={`/categories/${lesson.categories_id}/${lesson.id}`}>
-        <button>{lesson.lesson_title}</button>
-      </Link>
+      {/* <Link > */}
+        <Button href={`/categories/${lesson.categories_id}/${lesson.id}`} variant="outline-primary">{lesson.lesson_title}</Button>
+      {/* </Link> */}
     </div>
   ));
   return (
-    <>
-      {lessonList}
-      {/* <Button href={`/categories/${lessons.categories_id}/lessons/${lessons.id}`}>{lessons.lesson_title}</Button> */}
-      {/* <h1>{lessons.reading_material}</h1> 
-      <h2>{lesson.videos}</h2>
-      <h2>{lesson.categories_id}</h2>
-      <h2>What is an NFT?</h2> */}
-    </>
+    <Container>
+      <h2 className="m-5 p-2">Lessons</h2>
+      <Stack gap="3">
+        {lessonList}
+      </Stack>
+        {/* <Button href={`/categories/${lessons.categories_id}/lessons/${lessons.id}`}>{lessons.lesson_title}</Button> */}
+        {/* <h1>{lessons.reading_material}</h1> 
+        <h2>{lesson.videos}</h2>
+        <h2>{lesson.categories_id}</h2>
+        <h2>What is an NFT?</h2> */}
+    </Container>
   );
 }
