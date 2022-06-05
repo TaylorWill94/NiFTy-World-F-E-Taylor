@@ -41,7 +41,7 @@ export default function Comments() {
             <Card.Body>
               {c.name}
               <div>{c.post}</div>
-              <div>{c.date}</div>
+              <div>{c.date.slice(0, 10)}</div>
               <div>
                 {" "}
                 <button id={c.id} onClick={HandleDelete}>

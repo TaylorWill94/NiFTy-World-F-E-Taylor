@@ -29,7 +29,10 @@ function MessageForm() {
   };
 
   const handleSubmit = (event) => {
-    // event.preventDefault();
+    const date = new Date();
+    const formattedDate =
+      date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+    newComment.date = formattedDate;
     addedComment(newComment);
   };
 
@@ -59,15 +62,6 @@ function MessageForm() {
           placeholder="Type here"
         />
         <br />
-        <label htmlFor="date">DATE:</label>
-        <br />
-        <input
-          type="text"
-          id="date"
-          value={newComment.date}
-          onChange={handleText}
-          placeholder="0"
-        />
         <br />
         <input type="submit" />
       </form>
