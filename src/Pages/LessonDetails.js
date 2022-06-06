@@ -92,10 +92,12 @@ export default function LessonDetails() {
       {/* <Link to={`/questions/${id}`}>
         <Button className="next-btn">Next</Button>
       </Link> */}
+      <br />
+      <br />
       <div className="next-btn-div">
         <Link to={`/questions/${id}`}>
           <button type="button" className="btn btn-outline-primary next-button">
-            Take a quiz!
+            Take the quiz!
           </button>
         </Link>
       </div>
