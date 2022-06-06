@@ -26,11 +26,10 @@ function Questions() {
   }, [id, URL]);
 
   return (
-    <Container>
+    <Container className="my-4">
       <h1>Let's test your knowledge on what you've learned!</h1>
       <Stack className="mt-4" gap="3">
         <h1>{questions.question_text}</h1>
-        <br />
         <br />
         {/* <button
           className={style}
@@ -55,8 +54,6 @@ function Questions() {
           <Card.Body>{questions.answer}</Card.Body>
         </Card>
         <br />
-        <br />
-
         <Card
           className={isCorrectAnswer === "wrong" ? "wrong2" : ""}
           onClick={() => {
@@ -70,10 +67,7 @@ function Questions() {
         <div>You selected the correct answer!</div>
       )}
       {isCorrectAnswer === "wrong" && <div>Opps, try again!</div>}
-
-      <Link to={`/categories`}>
-        <Button>I Want To Learn More!</Button>
-      </Link>
+        <Button href="/categories" className="my-4">I Want To Learn More!</Button>
     </Container>
   );
 }

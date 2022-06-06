@@ -1,0 +1,39 @@
+.nft {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nft-heading {
+  text-align: center;
+  background-color: yellow;
+  border-radius: 12px;
+  padding: 50px;
+}
+
+.learn-btn {
+  grid-column: 2;
+  margin-top: 25px;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.lesson-content {
+  grid-column: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+.little-lady {
+  grid-column: 2;
+}
+
+.next-btn-div {
+  grid-column: 2;
+  padding: 20px;
+  text-align: center;
+}
+
+.next-button {
+  grid-column: 2;
+  text-align: center;
+}
