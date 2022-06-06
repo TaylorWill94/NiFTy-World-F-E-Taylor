@@ -1,0 +1,12 @@
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  background-color: #3164a8;
+  padding-right: 0%;
+  margin: auto;
+}
+.nav-logo {
+  float: left !important;
+  margin-top: -15px !important;
+  border-radius: 100%;
+}

@@ -1,5 +1,7 @@
 import axios from "axios";
-import { Container, Stack, Button } from "react-bootstrap";
+
+import { Container, Stack, Button, Card } from "react-bootstrap";
+
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./Question.css";
@@ -38,24 +40,33 @@ function Questions() {
         >
           {questions.answer}
         </button> */}
+ 
         <button
           className={isCorrectAnswer === "correct" ? "cont2" : ""}
+
+        <Card
+          className={style}
+
           onClick={() => {
             setIsCorrectAnswer("correct");
           }}
         >
-          {questions.answer}
-        </button>
+          <Card.Body>
+            {questions.answer}
+          </Card.Body>
+        </Card>
         <br />
         <br />
-        <button
-          className={isCorrectAnswer === "wrong" ? "wrong2" : ""}
+
+        <Card  className={isCorrectAnswer === "wrong" ? "wrong2" : ""}
           onClick={() => {
             setIsCorrectAnswer("wrong");
-          }}
-        >
-          {questions.wrong_answer}
-        </button>
+          }}>
+          <Card.Body>
+            {questions.wrong_answer}
+          </Card.Body>
+        </Card>
+
       </Stack>
       {isCorrectAnswer === "correct" && (
         <div>You selected the correct answer!</div>

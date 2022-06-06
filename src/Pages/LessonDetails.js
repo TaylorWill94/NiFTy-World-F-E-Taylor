@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { Container , Button } from "react-bootstrap";
 
-export default function NFT() {
+export default function LessonDetails() {
   const [content, setContent] = useState({});
   const [show, setShow] = useState(true);
   const [changeText, setChangeText] = useState("Learn");
@@ -46,47 +47,26 @@ export default function NFT() {
   // };
 
   return (
-    <div className="nft">
-      <br />
-      <br />
-      <h1 className="nft-heading">{content.lesson_title}</h1>
-      <br />
-      <br />
-      {content.reading_material ? (
-        <button
-          className="nft-learn-btn"
-          onClick={() => {
-            showNft();
-            changeBtnText();
-          }}
-        >
-          {changeText}
-        </button>
-      ) : (
-        <button
-          className="nft-learn-btn"
-          onClick={() => {
-            showNft();
-            closeBtn();
-          }}
-        >
-          {changeText}
-        </button>
-      )}
-      <br />
-      <br />
-      {show ? "" : content.reading_material}
-      <video
-        className="little-lady"
-        src={content.videos_url}
-        type="video/mp4"
-        width="750"
-        height="500"
-        controls
-      ></video>
-      <Link to={`/questions/${id}`}>
-        <button className="next-btn">Next</button>
-      </Link>
-    </div>
+    <Container>
+      <h1 style={{backgroundColor: "yellow", textAlign: "center"}} className="m-5 p-5">{content.lesson_title}</h1>
+      <Container>
+        <video
+          className="little-lady"
+          src={content.videos_url}
+          type="video/mp4"
+          width="750"
+          height="500"
+          controls
+        ></video>
+      </Container>
+      <Container>
+        <Button href={`/questions/${id}`} variant="outline-primary">Next</Button>
+      </Container>
+      <Container>
+
+        {show ? "" : content.reading_material}
+      </Container>
+      
+    </Container>
   );
 }
