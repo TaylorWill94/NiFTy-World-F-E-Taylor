@@ -9,6 +9,7 @@ import "./Question.css";
 function Questions() {
   const [questions, setQuestions] = useState([]);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(null);
+  const [style, setStyle] = useState("cont");
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
 
@@ -40,33 +41,30 @@ function Questions() {
         >
           {questions.answer}
         </button> */}
- 
-        <button
+
+        {/* <button
           className={isCorrectAnswer === "correct" ? "cont2" : ""}
+        ></button> */}
 
         <Card
-          className={style}
-
+          className={isCorrectAnswer === "correct" ? "cont2" : ""}
           onClick={() => {
             setIsCorrectAnswer("correct");
           }}
         >
-          <Card.Body>
-            {questions.answer}
-          </Card.Body>
+          <Card.Body>{questions.answer}</Card.Body>
         </Card>
         <br />
         <br />
 
-        <Card  className={isCorrectAnswer === "wrong" ? "wrong2" : ""}
+        <Card
+          className={isCorrectAnswer === "wrong" ? "wrong2" : ""}
           onClick={() => {
             setIsCorrectAnswer("wrong");
-          }}>
-          <Card.Body>
-            {questions.wrong_answer}
-          </Card.Body>
+          }}
+        >
+          <Card.Body>{questions.wrong_answer}</Card.Body>
         </Card>
-
       </Stack>
       {isCorrectAnswer === "correct" && (
         <div>You selected the correct answer!</div>
