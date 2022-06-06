@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function NFT() {
+export default function LessonDetails() {
   const [content, setContent] = useState({});
   const [show, setShow] = useState(true);
   const [changeText, setChangeText] = useState("Learn");

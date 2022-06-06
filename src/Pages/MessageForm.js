@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Form , Col, Button, Container} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function MessageForm() {
@@ -29,51 +30,40 @@ function MessageForm() {
   };
 
   const handleSubmit = (event) => {
-    // event.preventDefault();
+    const date = new Date();
+    const formattedDate =
+      date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+    newComment.date = formattedDate;
     addedComment(newComment);
   };
 
   return (
-    <div className="new-form">
-      <br />
-      <br />
-      <h1>ADD A NEW COMMENT...</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">NAME:</label>
-        <br />
-        <input
-          type="text"
-          id="name"
-          value={newComment.name}
-          onChange={handleText}
-          placeholder="NAME ME"
-        />
-        <br />
-        <label htmlFor="post">POST:</label>
-        <br />
-        <input
-          type="text"
-          id="post"
-          value={newComment.post}
-          onChange={handleText}
-          placeholder="Type here"
-        />
-        <br />
-        <label htmlFor="date">DATE:</label>
-        <br />
-        <input
-          type="text"
-          id="date"
-          value={newComment.date}
-          onChange={handleText}
-          placeholder="0"
-        />
-        <br />
-        <input type="submit" />
-      </form>
-      <br />
-      <br />
-    </div>
+    <Container className="my-4">
+      <h2 className="my-4">ADD A NEW COMMENT...</h2>
+      <Form onSubmit={handleSubmit}>
+        <Form.Label className="my-2" htmlFor="name">NAME:</Form.Label>
+        <Col sm="4">
+          <Form.Control
+            type="text"
+            id="name"
+            value={newComment.name}
+            onChange={handleText}
+            placeholder="NAME ME"
+          />
+        </Col>
+        <Form.Label  className="my-2" htmlFor="post">POST:</Form.Label>
+        <Col sm="4">
+          <Form.Control
+            type="text"
+            id="post"
+            value={newComment.post}
+            onChange={handleText}
+            placeholder="Type here"
+          />
+        </Col>
+        <Button as="input" type="submit" value="Submit" className="my-3"/>
+      </Form>
+    </Container>
   );
 }
 

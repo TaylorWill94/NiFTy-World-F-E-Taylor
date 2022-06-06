@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Form , Button , Container, Col} from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 
 const MessageEdit = () => {
@@ -37,32 +38,39 @@ const MessageEdit = () => {
   };
   console.log(comment);
   return (
-    <div className="editForm">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          value={comment.name}
-          type="text"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="post">Post</label>
-        <input
-          id="post"
-          value={comment.post}
-          type="text"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="date">Date</label>
-        <input
-          id="date"
-          value={comment.date}
-          type="text"
-          onChange={handleTextChange}
-        />
-        <input type="submit" />
-      </form>
-    </div>
+    <Container className="my-4">
+      <h2 className="my-3">Edit Form</h2>
+      <Form onSubmit={handleSubmit}>
+        <Form.Label htmlFor="name">Name</Form.Label>
+        <Col sm="5">
+          <Form.Control
+            id="name"
+            value={comment.name}
+            type="text"
+            onChange={handleTextChange}
+          />
+        </Col>
+        <Form.Label htmlFor="post">Post</Form.Label>
+        <Col sm="5">
+          <Form.Control
+            id="post"
+            value={comment.post}
+            type="text"
+            onChange={handleTextChange}
+          />
+        </Col>
+        <Form.Label htmlFor="date">Date</Form.Label>
+        <Col sm="5">
+          <Form.Control
+            id="date"
+            value={comment.date}
+            type="text"
+            onChange={handleTextChange}
+          />
+        </Col>
+        <Button as="input" type="submit" value="Submit" className="my-3"/>
+      </Form>
+    </Container>
   );
 };
 export default MessageEdit;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import MessageForm from "./MessageForm";
 import { useParams } from "react-router";
-import { Card } from "react-bootstrap";
+import { Button, Card , Container, Stack} from "react-bootstrap";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
@@ -32,31 +32,27 @@ export default function Comments() {
   console.log(id);
 
   return (
-    <div>
+    <Container>
       <MessageForm />
-      <h1>Please add a comment here!!</h1>
+      <h3 className="my-4">Please add a comment here!!</h3>
       {comments.map((c, index) => {
         return (
-          <Card key={index}>
+          <Card key={index} className="my-2">
             <Card.Body>
               {c.name}
               <div>{c.post}</div>
-              <div>{c.date}</div>
+              <div>{c.date.slice(0, 10)}</div>
               <div>
-                {" "}
-                <button id={c.id} onClick={HandleDelete}>
-                  Delete{" "}
-                </button>{" "}
+                <Stack className="my-2" direction="horizontal" gap="2">
+                  <Button variant="outline-primary"id={c.id} onClick={HandleDelete}>Delete</Button>
+                  <Button href={`/comments/${c.id}/edit`} variant="outline-primary">Edit </Button>
+                </Stack>  
               </div>
-              <Link to={`/comments/${c.id}/edit`}>
-                {" "}
-                <button>Edit </button>{" "}
-              </Link>
             </Card.Body>
           </Card>
         );
       })}
-    </div>
+    </Container>
   );
 }
 

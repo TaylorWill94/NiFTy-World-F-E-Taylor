@@ -1,13 +1,15 @@
 import axios from "axios";
-import { Container, Stack } from "react-bootstrap";
+
+import { Container, Stack, Button, Card } from "react-bootstrap";
+
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Question.css";
 
 function Questions() {
   const [questions, setQuestions] = useState([]);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState(null);
   const [style, setStyle] = useState("cont");
-  const [wrong, setWrong] = useState("wrong");
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
 
@@ -23,42 +25,11 @@ function Questions() {
       });
   }, [id, URL]);
 
-  // let quiz = questions.map((question, index) => (
-  //   <Link to="/correct">
-  //     <Card key={index}>
-  //       <Card.Body>
-  //         <Card.Text>{question.answer}</Card.Text>
-  //       </Card.Body>
-  //     </Card>
-  //   </Link>
-  // ));
-
-  const changeBtnColor = () => {
-    setStyle("cont2");
-  };
-
-  const alert = () => {
-    if (setStyle("cont2")) {
-    }
-  };
-
-  const wrongBtnColor = () => {
-    setWrong("wrong2");
-  };
-
   return (
-    <Container>
+    <Container className="my-4">
       <h1>Let's test your knowledge on what you've learned!</h1>
       <Stack className="mt-4" gap="3">
-        <Link to="/tryagain">
-          {/* <Card>
-            <Card.Body>
-              <Card.Text>A token to purchase snacks</Card.Text>
-            </Card.Body>
-          </Card> */}
-        </Link>
         <h1>{questions.question_text}</h1>
-        <br />
         <br />
         {/* <button
           className={style}
@@ -69,20 +40,34 @@ function Questions() {
         >
           {questions.answer}
         </button> */}
-        <button
-          className={style}
+
+        {/* <button
+          className={isCorrectAnswer === "correct" ? "cont2" : ""}
+        ></button> */}
+
+        <Card
+          className={isCorrectAnswer === "correct" ? "cont2" : ""}
           onClick={() => {
-            changeBtnColor();
+            setIsCorrectAnswer("correct");
           }}
         >
-          {questions.answer}
-        </button>
+          <Card.Body>{questions.answer}</Card.Body>
+        </Card>
         <br />
-        <br />
-        <button className={wrong} onClick={wrongBtnColor}>
-          {questions.wrong_answer}
-        </button>
+        <Card
+          className={isCorrectAnswer === "wrong" ? "wrong2" : ""}
+          onClick={() => {
+            setIsCorrectAnswer("wrong");
+          }}
+        >
+          <Card.Body>{questions.wrong_answer}</Card.Body>
+        </Card>
       </Stack>
+      {isCorrectAnswer === "correct" && (
+        <div>You selected the correct answer!</div>
+      )}
+      {isCorrectAnswer === "wrong" && <div>Opps, try again!</div>}
+        <Button href="/categories" className="my-4">I Want To Learn More!</Button>
     </Container>
   );
 }
