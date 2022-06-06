@@ -5,7 +5,7 @@ function SignUp() {
   return (
     <Container className="sign-up">
       <div className="sign-up-form">
-        <h1>Welcome to NiFTy World!</h1>
+        <h1>Become a NiFTy World Pal!</h1>
         <br />
         <div className="logInForm">
           <form>
