@@ -95,7 +95,7 @@ export default function LessonDetails() {
       <div className="next-btn-div">
         <Link to={`/questions/${id}`}>
           <button type="button" className="btn btn-outline-primary next-button">
-            Next
+            Take a quiz!
           </button>
         </Link>
       </div>
