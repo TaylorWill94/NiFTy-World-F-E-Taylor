@@ -1,3 +1,4 @@
+import "./NFT.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -54,7 +55,8 @@ export default function NFT() {
       <br />
       {content.reading_material ? (
         <button
-          className="nft-learn-btn"
+          type="button"
+          className="btn btn-outline-primary learn-btn"
           onClick={() => {
             showNft();
             changeBtnText();
@@ -64,7 +66,8 @@ export default function NFT() {
         </button>
       ) : (
         <button
-          className="nft-learn-btn"
+          type="button"
+          className="btn btn-outline-primary nft-learn-btn"
           onClick={() => {
             showNft();
             closeBtn();
@@ -75,7 +78,9 @@ export default function NFT() {
       )}
       <br />
       <br />
-      {show ? "" : content.reading_material}
+      <div className="lesson-content">
+        {show ? "" : content.reading_material}
+      </div>
       <video
         className="little-lady"
         src={content.videos_url}
@@ -84,9 +89,16 @@ export default function NFT() {
         height="500"
         controls
       ></video>
-      <Link to={`/questions/${id}`}>
-        <button className="next-btn">Next</button>
-      </Link>
+      {/* <Link to={`/questions/${id}`}>
+        <Button className="next-btn">Next</Button>
+      </Link> */}
+      <div className="next-btn-div">
+        <Link to={`/questions/${id}`}>
+          <button type="button" className="btn btn-outline-primary next-button">
+            Next
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
