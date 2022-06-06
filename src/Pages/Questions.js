@@ -1,7 +1,7 @@
 import axios from "axios";
-import { Container, Stack } from "react-bootstrap";
+import { Container, Stack, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Question.css";
 
 function Questions() {
@@ -61,6 +61,10 @@ function Questions() {
         <div>You selected the correct answer!</div>
       )}
       {isCorrectAnswer === "wrong" && <div>Opps, try again!</div>}
+
+      <Link to={`/categories`}>
+        <Button>I Want To Learn More!</Button>
+      </Link>
     </Container>
   );
 }
