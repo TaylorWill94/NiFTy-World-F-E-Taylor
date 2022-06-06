@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { Container , Button } from "react-bootstrap";
+import { Container , Button , Stack} from "react-bootstrap";
 
 export default function LessonDetails() {
   const [content, setContent] = useState({});
@@ -31,7 +31,7 @@ export default function LessonDetails() {
   };
 
   const changeBtnText = () => {
-    setChangeText(":D");
+    setChangeText("Learn");
   };
 
   const closeBtn = () => {
@@ -49,6 +49,33 @@ export default function LessonDetails() {
   return (
     <Container>
       <h1 style={{backgroundColor: "yellow", textAlign: "center"}} className="m-5 p-5">{content.lesson_title}</h1>
+      <Stack direction="horizontal" gap="4">
+      {content.reading_material ? (
+        <Button
+          className="outline-primary"
+          onClick={() => {
+            showNft();
+            changeBtnText();
+          }}
+        >
+          {changeText}
+        </Button>
+      ) : (
+        <Button
+        className="outline-primary"
+          onClick={() => {
+            showNft();
+            closeBtn();
+          }}
+        >
+          {changeText}
+        </Button>
+      )}
+      <Button href={`/questions/${id}`} variant="primary">Take the quiz!</Button>
+      </Stack>
+      <Container className="my-5">
+      {show ? "" : content.reading_material}
+      </Container>
       <Container>
         <video
           className="little-lady"
@@ -59,14 +86,6 @@ export default function LessonDetails() {
           controls
         ></video>
       </Container>
-      <Container>
-        <Button href={`/questions/${id}`} variant="outline-primary">Next</Button>
-      </Container>
-      <Container>
-
-        {show ? "" : content.reading_material}
-      </Container>
-      
     </Container>
   );
 }
