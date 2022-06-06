@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 
 //Components
 import NavBar from "./Components/NavBar";
-// import NFT from "./Pages/LessonDetails";
 
 //Pages
 import Home from "./Pages/Home";

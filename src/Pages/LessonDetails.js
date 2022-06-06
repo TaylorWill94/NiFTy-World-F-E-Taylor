@@ -1,7 +1,7 @@
+import "./NFT.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { Container , Button , Stack} from "react-bootstrap";
 
 export default function LessonDetails() {
   const [content, setContent] = useState({});
@@ -31,7 +31,7 @@ export default function LessonDetails() {
   };
 
   const changeBtnText = () => {
-    setChangeText("Learn");
+    setChangeText(":D");
   };
 
   const closeBtn = () => {
@@ -47,45 +47,58 @@ export default function LessonDetails() {
   // };
 
   return (
-    <Container>
-      <h1 style={{backgroundColor: "yellow", textAlign: "center"}} className="m-5 p-5">{content.lesson_title}</h1>
-      <Stack direction="horizontal" gap="4">
+    <div className="nft">
+      <br />
+      <br />
+      <h1 className="nft-heading">{content.lesson_title}</h1>
+      <br />
+      <br />
       {content.reading_material ? (
-        <Button
-          className="outline-primary"
+        <button
+          type="button"
+          className="btn btn-outline-primary learn-btn"
           onClick={() => {
             showNft();
             changeBtnText();
           }}
         >
           {changeText}
-        </Button>
+        </button>
       ) : (
-        <Button
-        className="outline-primary"
+        <button
+          type="button"
+          className="btn btn-outline-primary nft-learn-btn"
           onClick={() => {
             showNft();
             closeBtn();
           }}
         >
           {changeText}
-        </Button>
+        </button>
       )}
-      <Button href={`/questions/${id}`} variant="primary">Take the quiz!</Button>
-      </Stack>
-      <Container className="my-5">
-      {show ? "" : content.reading_material}
-      </Container>
-      <Container>
-        <video
-          className="little-lady"
-          src={content.videos_url}
-          type="video/mp4"
-          width="750"
-          height="500"
-          controls
-        ></video>
-      </Container>
-    </Container>
+      <br />
+      <br />
+      <div className="lesson-content">
+        {show ? "" : content.reading_material}
+      </div>
+      <video
+        className="little-lady"
+        src={content.videos_url}
+        type="video/mp4"
+        width="750"
+        height="500"
+        controls
+      ></video>
+      {/* <Link to={`/questions/${id}`}>
+        <Button className="next-btn">Next</Button>
+      </Link> */}
+      <div className="next-btn-div">
+        <Link to={`/questions/${id}`}>
+          <button type="button" className="btn btn-outline-primary next-button">
+            Take a quiz!
+          </button>
+        </Link>
+      </div>
+    </div>
   );
 }
