@@ -21,8 +21,8 @@ function Categories() {
 
   return (
     <Container className="background">
-      <h1>Choose your category</h1>
-      <Stack className="p-5" direction="vertical" gap="4">
+      <h1 className="my-5">Choose your category</h1>
+      <Stack direction="horizontal" gap="4">
         {category.map((category, index) => (
           <Link key={index} to={`/categories/${category.id}`}>
             <Button variant="outline-primary">{category.name}</Button>

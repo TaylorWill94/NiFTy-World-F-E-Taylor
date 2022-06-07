@@ -56,8 +56,8 @@ export default function LessonList() {
   ));
   return (
     <Container>
-      <h2 className="m-5 p-2">Lessons</h2>
-      <Stack gap="3">
+      <h2 className="my-5">Lessons</h2>
+      <Stack className="mt-5" gap="3">
         {lessonList}
       </Stack>
         {/* <Button href={`/categories/${lessons.categories_id}/lessons/${lessons.id}`}>{lessons.lesson_title}</Button> */}
