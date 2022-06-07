@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import MessageForm from "./MessageForm";
 import { useParams } from "react-router";
@@ -34,7 +33,7 @@ export default function Comments() {
   return (
     <Container>
       <MessageForm />
-      <h3 className="my-4">Please add a comment here!!</h3>
+      <h3 className="my-4">Check out your Nifty peer's questions below</h3>
       {comments.map((c, index) => {
         return (
           <Card key={index} className="my-2">

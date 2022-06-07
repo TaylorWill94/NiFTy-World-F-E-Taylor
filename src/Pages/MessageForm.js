@@ -39,7 +39,7 @@ function MessageForm() {
 
   return (
     <Container className="my-4">
-      <h2 className="my-4">ADD A NEW COMMENT...</h2>
+      <h2 className="my-4">Hi NiFTy Pal! Do you have a question?</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Label className="my-2" htmlFor="name">NAME:</Form.Label>
         <Col sm="4">
