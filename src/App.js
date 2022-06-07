@@ -13,7 +13,7 @@ import Messages from "./Pages/Messages";
 import Questions from "./Pages/Questions";
 import MessageEdit from "Pages/MessageEdit";
 import LogIn from "Pages/LogIn";
-import SignUp from "Pages/SignUp";
+// import SignUp from "Pages/SignUp";
 import LessonDetails from "./Pages/LessonDetails";
 // import Crypto from "Pages/Crypto";
 
@@ -30,7 +30,7 @@ function App() {
         <Route path="/comments" element={<Messages />} />
         <Route path="/comments/:id/edit" element={<MessageEdit />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        {/* <Route path="/signup" element={<SignUp />} /> */}
       </Routes>
     </div>
   );
