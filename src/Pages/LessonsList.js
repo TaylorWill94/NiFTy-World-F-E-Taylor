@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import nftvideo from "../Components/nftvideo.mp4";
 // import Videos from "../Components/Videos";
 import axios from "axios";
