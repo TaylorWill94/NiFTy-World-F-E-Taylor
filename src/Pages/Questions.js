@@ -3,13 +3,13 @@ import axios from "axios";
 import { Container, Stack, Button, Card } from "react-bootstrap";
 
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Question.css";
 
 function Questions() {
   const [questions, setQuestions] = useState([]);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(null);
-  const [style, setStyle] = useState("cont");
+  // const [style, setStyle] = useState("cont");
   const URL = process.env.REACT_APP_API_URL;
   const { id } = useParams();
 
@@ -67,7 +67,9 @@ function Questions() {
         <div>You selected the correct answer!</div>
       )}
       {isCorrectAnswer === "wrong" && <div>Opps, try again!</div>}
-        <Button href="/categories" className="my-4">I Want To Learn More!</Button>
+      <Button href="/categories" className="my-4">
+        I Want To Learn More!
+      </Button>
     </Container>
   );
 }
